@@ -11,41 +11,31 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.Tech. in Electrical Engineering (Power and Automation), Indian Institute of Technology Delhi, 2015-2019
+* M.S. in Computer Science, University of California San Diego, 2021-2023
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* AI/ML Intern, Apple Seattle, June 2022 - Sept. 2022
+  * Developed a new tool as part of the CoreMLTools team to convert a deep learning model defined in JAX to CoreML.
+  * Implemented transformations for 40 tensor operations defined in JAX to efficiently map to the existing CoreML ops.
+  * Optimized and tested the existing framework to successfully convert heavy JAX models like GPT2, CLIP and ViT.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Research Engineer, Illinois at Singapore (UIUC), June 2019 - Nov 2020
+  * Developed a training framework in pytorch and caffe for extreme quantization of low parameter deep learning models like
+    SkyNet, which on 2,4-bit quantization outperformed the winner of DAC 2020 on both performance and model size.
+  * Designed a parameter search algorithm to find optimal FPGA tiling parameters for deployment of deep learning models
+    using Monte Carlo method. Developed a visualization system to track the tile parameters and load division on FPGAs.
+  * Evaluated competing compression methods for large scale transformer based language models like BERT [TACL 21].
 
-Publications
+* Software Engineering Intern, Arcesium India, May 2018 - July 2018
+  * Designed a model in Java and ActiveMQ to horizontally scale the financial data processing engine on multiple nodes.
+  * Developed a sql based relationship handling system to handle dependency issues arising as a result of parallel processing
+
+Papers and Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
 Teaching
@@ -53,7 +43,14 @@ Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
+
+Skills
+======
+* 
+* Programming Languages: Python, Java, C++, Latex
+* ML frameworks: Pytorch, Tensorflow, JAX
+* Softwares: MATLAB, SIMULINK
+
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* BloodConnect 2016-2018: Helped manage and organize community blood donation drives in New Delhi
