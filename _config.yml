@@ -85,15 +85,14 @@ author:
   bio              : "Grad student interested in explainable AI"
   location         : "San Diego, California"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  googlescholar    : "https://scholar.google.com/citations?user=hc836CkAAAAJ&hl=en"
   email            : "makhan@ucsd.edu"
   github           : "makiit"
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         :
+  linkedin         : "https://www.linkedin.com/in/makhan21/"
 
 
 # Reading Files
