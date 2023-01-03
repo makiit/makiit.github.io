@@ -2,7 +2,7 @@
 title: "Compressing Large-Scale Transformer-Based Models: A Case Study on BERT"
 collection: publications
 permalink: /publication/Bert
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
+excerpt: 'Pre-trained Transformer-based models have achieved state-of-the-art performance for various Natural Language Processing (NLP) tasks. However, these models often have billions of parameters, and thus are too resource- hungry and computation-intensive to suit low- capability devices or applications with strict latency requirements. One potential remedy for this is model compression, which has attracted considerable research attention. Here, we summarize the research in compressing Transformers, focusing on the especially popular BERT model. In particular, we survey the state of the art in compression for BERT, we clarify the current best practices for compressing large-scale Transformer models, and we provide insights into the workings of various methods. Our categorization and analysis also shed light on promising future research directions for achieving lightweight, accurate, and generic NLP models.'
 date: 2021
 venue: 'TACL 21'
 paperurl: 'https://aclanthology.org/2021.tacl-1.63'
