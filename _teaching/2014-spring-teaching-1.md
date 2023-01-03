@@ -1,20 +1,10 @@
 ---
 title: "Teaching experience 1"
-collection: teaching
-type: "Undergraduate course"
+collection: teaching assistant
+type: "Graduate course"
 permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+venue: "University of California, San Diego, Data Science department"
+date: 2022-09-17
+location: "La Jolla, United States"
 ---
-
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+Teaching Assistant for DSC 210: Numerical Linear Algebra course taught by Prof Lily Weng in Fall 22.
