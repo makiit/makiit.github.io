@@ -1,0 +1,38 @@
+# Thoughts on polysemanticity in deep learning models
+
+# Introduction and main definitions
+
+As deep learning models become more mainstream and start to be employed in tasks with real consequences, it becomes imperative that we have some idea of how they are making decisions. This has led to a widespread interest in the research community to study how these models actually function.  In this paper, I would like to summarize some major breakthroughs in the field and mainly focus on one specific sub-area of interest that has emerged as a result of recent studies. I intend to keep updating this as the field develops.
+
+Before going too deep into the specifics, let's formalize a few ideas and definitions that would be consistent in this article. Most of these ideas are directly taken from Elhage et al. 
+
+- ******Components of a deep neural network.****** There are two main components to any model, the parameters and the activations. The parameters operate on the inputs to form outputs that live in the activation space which are then inputs to the next layer and so on. Elhage et al thought of the weights as operations in a computer program and activations to be the variables. To decode what the model is doing it's important that we understand what the ************variables************ represent. Therefore, ******************************************************we are interested in the output space****************************************************** of neural networks.
+- ********************Features:******************** There is much debate on what should be the formal definition of a ‘feature’ with considerations about being understandable by a human etc., but in this paper we consider  a **feature as a unique direction in the output space that corresponds to a particular concept of the input.** For example in word embedding space, there is a direction in the embedding space which corresponds to a “man”.
+- **Neurons**: Inspired from biological neurons or brain cells, an artificial neuron can be thought of as the individual computing unit of the deep learning model. In a MLP a neuron is by definition a single affine operation $Wx+b$ followed by a non-linearity. Many such neurons comprise a layer. Similarly in a CNN the neurons would be individual $k \times k \times c_{in}$ filters that operate on the input feature map with $c_{in}$ channels. As before we can look at the output space of the neuron to see what that particular neuron is representing.
+- ************************************Privileged basis:************************************ Given a $d$ dimensional activation space, a single neuron produces 1 element of this vector. To help us make things more concrete later lets say that the neurons define a basis in the d-dimensional activation space. Neuron 1 represents the vector $(1,0, \dots 0)$, neuron 2 $(0, 1, \dots, 0)$ and so on. We call this basis the ************************the privileged basis************************ of the network.
+- Since we define features as directions in the activation space, its very possible (and does happen) that features are not aligned with the privileged basis. What this means is that the model has learnt to distribute the representation of a concept over combinations of neurons and not just a single neuron. This is problematic if what we want to study is a single neuron, as if this happens we may see some neurons representing multiple concepts, which are called ********************polysemantic neurons.********************
+- Even though features may be any direction in the activation space, Elhage et al argue that having piece wise non-linear activation function strongly incentivizes the models to align features with privileged directions. That’s why we see a lot of monosemantic neurons in models like MLPs, CNNs etc. However, models like word-embeddings have no such incentive and indeed we see features being represented with random directions. For example, the “man”, “woman” directions in word2vec etc.
+
+# Polysemanticity and its causes
+
+Polysemantic neurons are neurons which are activated by more than one feature or concept. This leads to problems in efforts to assign a concept to a neuron for the purpose of explaining the behavior of a deep learning model.
+
+Here we look at two causes why the neurons may be polysemantic
+
+![Image taken from [Softmax Linear Units](https://transformer-circuits.pub/2022/solu/index.html) by Elhage et al](Thoughts%20on%20polysemanticity%20in%20deep%20learning%20model%2010c5e91303b2449d861ecdaf9e4a5628/Untitled.png)
+
+Image taken from [Softmax Linear Units](https://transformer-circuits.pub/2022/solu/index.html) by Elhage et al
+
+- As seen before, if the feature directions aren’t aligned with the neurons defined privileged basis we see polysemanticity. Figure on the left shows this phenomenon. There has been recent approaches to learn orthogonal matrices to align the feature directions with the neuron basis, see Concept Whitening.
+- However, recently Elhage et al in their Toy Models for Superposition, presented the **superposition hypothesis** for polysemanticity. The main ideas are as follows
+    - Given $d$ dimensions its possible to encode maximum $d$ orthogonal features. However, a model may want to represent much more to solve the particular task
+    - Even though there can only be $d$ orthogonal features, there can be $\exp (d)$ *************almost************* orthogonal features.
+    - Non-orthogonal features interfere with each other as an input containing a concept spuriously activates some other features, however the benefit from getting to represent many more features can over power this interference
+    - Non-linearity is crucial for models to have superposition as they help in getting rid of the interference factor. For example, in a ReLU network if the interference is negative then its wiped out by the non-linearity.
+    - The authors suggest that superposition enables a way for a smaller model to act as a much larger model where the features are orthogonal. Such a hypothetically large model would be explainable with the help of an overcomplete basis.
+    
+    I discuss this paper in much more detail here
+    
+    # How to deal with polysemanticity and superposition
+    
+    Superposition is a major challenge in approaches for mechanistic interpretability as it seems that the existence of superposition is actually needed for the models to perform well. A recent work SoftMax Linear Units, talks about suppressing the superposition by developing a different activation function that encourages the activation space to be sparser. <To be continued>
