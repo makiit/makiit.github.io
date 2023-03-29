@@ -19,7 +19,7 @@ Polysemantic neurons are neurons which are activated by more than one feature or
 
 Here we look at two causes why the neurons may be polysemantic
 
-![Image taken from [Softmax Linear Units](https://transformer-circuits.pub/2022/solu/index.html) by Elhage et al](Thoughts%20on%20polysemanticity%20in%20deep%20learning%20model%2010c5e91303b2449d861ecdaf9e4a5628/Untitled.png)
+![images/polysem.png](https://transformer-circuits.pub/2022/solu/index.html) by Elhage et al](Thoughts%20on%20polysemanticity%20in%20deep%20learning%20model%2010c5e91303b2449d861ecdaf9e4a5628/Untitled.png)
 
 Image taken from [Softmax Linear Units](https://transformer-circuits.pub/2022/solu/index.html) by Elhage et al
 
