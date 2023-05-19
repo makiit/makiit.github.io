@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Interpretable A(l)i"
+title: "Thinking about mechanistic interpretability"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
